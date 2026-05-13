@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w1wfk1i5ewye"]
 
-[ext_resource type="Script" uid="uid://bsyry4u4thyef" path="res://assets(stuff)/player.gd" id="1_i02a3"]
+[ext_resource type="Script" uid="uid://bsyry4u4thyef" path="res://scripts(pain)/player.gd" id="1_i02a3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uxwo"]
 
@@ -16,3 +16,8 @@ offset_left = -9.666667
 offset_top = -10.0
 offset_right = 10.333333
 offset_bottom = 9.666666
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=514852992]
+position = Vector2(526, -118)
+zoom = Vector2(0.5, 1)
+position_smoothing_enabled = true
