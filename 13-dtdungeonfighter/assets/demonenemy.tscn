@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://de5m4npxysw7h"]
+
+[ext_resource type="Script" uid="uid://be2plhsb3cpa4" path="res://scripts(pain)/demon.gd" id="1_n7ea3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnc05"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1446513223]
+script = ExtResource("1_n7ea3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79526123]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_gnc05")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=1686518463]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
