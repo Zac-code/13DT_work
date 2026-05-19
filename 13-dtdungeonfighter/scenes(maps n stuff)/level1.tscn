@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://w1wfk1i5ewye" path="res://assets/player.tscn" id="1_ltvaw"]
 [ext_resource type="PackedScene" uid="uid://dpgepu4jyvc1n" path="res://assets/platform.tscn" id="2_ol74c"]
+[ext_resource type="PackedScene" uid="uid://de5m4npxysw7h" path="res://assets/demonenemy.tscn" id="3_odxj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol74c"]
 size = Vector2(3115, 119)
@@ -31,3 +32,6 @@ position = Vector2(1560, 423)
 
 [node name="StaticBody2D4" parent="." unique_id=1019688572 instance=ExtResource("2_ol74c")]
 position = Vector2(2320, 417)
+
+[node name="CharacterBody2D2" parent="." unique_id=1446513223 instance=ExtResource("3_odxj3")]
+position = Vector2(1003, 489)
