@@ -20,3 +20,4 @@ offset_bottom = 9.666666
 [node name="camera" type="Camera2D" parent="." unique_id=514852992]
 position = Vector2(526, -118)
 zoom = Vector2(0.5, 1)
+position_smoothing_enabled = true
