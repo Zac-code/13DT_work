@@ -11,12 +11,19 @@ var is_player_detected: bool = false
 @export var acceleration: float = 500.0
 @export var friction: float = 400.0
 
+# Damage system
+@export var damage_amount: int = 10
+@export var damage_cooldown: float = 1.0
+var can_damage: bool = true
+
 # Velocity
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	# Get reference to player node
 	player = get_node(player_node_path)
+	# Add demon to "enemy" group for easy detection
+	add_to_group("enemy")
 
 func _physics_process(delta: float) -> void:
 	# Check if player is in detection range
@@ -30,6 +37,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Apply velocity and move
 	velocity = move_and_slide(velocity)
+	
+	# Check for collision with player
+	check_collision_with_player()
 
 func check_player_detection() -> void:
 	"""Check if player is within detection range"""
@@ -51,6 +61,22 @@ func track_player(delta: float) -> void:
 func apply_friction(delta: float) -> void:
 	"""Apply friction when player is not detected"""
 	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+
+func check_collision_with_player() -> void:
+	"""Check if demon is colliding with player and deal damage"""
+	if player == null or not can_damage:
+		return
+	
+	# Get all colliding bodies
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		if collision.get_collider() == player:
+			# Deal damage to player
+			player.take_damage(damage_amount)
+			can_damage = false
+			# Start cooldown
+			await get_tree().create_timer(damage_cooldown).timeout
+			can_damage = true
 
 func draw_detection_range() -> void:
 	"""Optional: Override _draw to visualize detection range"""
