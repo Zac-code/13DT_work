@@ -4,44 +4,19 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uxwo"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1532654129]
+[node name="player" type="CharacterBody2D" unique_id=1532654129]
 script = ExtResource("1_i02a3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1346114614]
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1346114614]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_3uxwo")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=433057768]
+[node name="duh" type="ColorRect" parent="hitbox" unique_id=433057768]
 offset_left = -9.666667
 offset_top = -10.0
 offset_right = 10.333333
 offset_bottom = 9.666666
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=514852992]
+[node name="camera" type="Camera2D" parent="." unique_id=514852992]
 position = Vector2(526, -118)
 zoom = Vector2(0.5, 1)
-position_smoothing_enabled = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1015874181]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=894635899]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=63352961]
-layout_mode = 0
-offset_left = -593.0
-offset_top = -413.0
-offset_right = -259.0
-offset_bottom = -386.0
-max_value = 10.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=682467219]
-layout_mode = 0
-offset_left = -560.0
-offset_top = -407.0
-offset_right = -520.0
-offset_bottom = -384.0
