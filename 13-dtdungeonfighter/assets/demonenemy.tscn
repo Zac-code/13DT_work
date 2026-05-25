@@ -8,7 +8,7 @@
 script = ExtResource("1_n7ea3")
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=79526123]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_gnc05")
 
 [node name="fuh" type="ColorRect" parent="hitbox" unique_id=1686518463]
