@@ -4,6 +4,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnc05"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ea3"]
+
 [node name="enemy" type="CharacterBody2D" unique_id=1446513223]
 script = ExtResource("1_n7ea3")
 
@@ -16,3 +18,9 @@ offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
 offset_bottom = 10.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=988505827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=866713267]
+scale = Vector2(30, 20)
+shape = SubResource("RectangleShape2D_n7ea3")
