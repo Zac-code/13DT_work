@@ -17,11 +17,11 @@ func _ready() -> void:
 	# Find the player in the scene
 	player = get_tree().root.get_child(0).find_child("player", true, false)
 	if player == null:
-		print("Warning: Could not find player node!")
+		print("couldn't find player")
 	gravity = get_gravity().y
 
 func _physics_process(delta: float) -> void:
-	# Apply gravity - scales with gravity_strength to control fall speed
+	# Apply gravity
 	if not is_on_floor():
 		velocity.y += gravity * gravity_strength * delta
 	else:
@@ -58,12 +58,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage(damage: int) -> void:
-	"""Called when player collides with this enemy's hitbox"""
 	# You can add effects here like knockback, animation, or health tracking
 	print("Enemy hit player for ", damage, " damage!")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	"""Called when something enters the hitbox Area2D"""
 	if area.name == "player_collision" or area.is_in_group("player"):
 		# Deal damage to player
 		if player != null and player.has_method("take_damage"):

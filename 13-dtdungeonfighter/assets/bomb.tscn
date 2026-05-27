@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b52uxr7gtaayn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy1li"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" unique_id=1367375846]
+shape = SubResource("RectangleShape2D_uy1li")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=432985947]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+metadata/_edit_use_anchors_ = true
