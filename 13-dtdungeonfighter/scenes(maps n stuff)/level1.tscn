@@ -2,36 +2,60 @@
 
 [ext_resource type="PackedScene" uid="uid://w1wfk1i5ewye" path="res://assets/player.tscn" id="1_ltvaw"]
 [ext_resource type="PackedScene" uid="uid://dpgepu4jyvc1n" path="res://assets/platform.tscn" id="2_ol74c"]
-[ext_resource type="PackedScene" uid="uid://de5m4npxysw7h" path="res://assets/demonenemy.tscn" id="3_odxj3"]
+[ext_resource type="PackedScene" uid="uid://de5m4npxysw7h" path="res://assets/evilrobot.tscn" id="3_odxj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol74c"]
-size = Vector2(3115, 269.5)
+size = Vector2(917, 269.5)
 
 [node name="Node2D" type="Node2D" unique_id=1148646714]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=104058461]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=302051891]
-position = Vector2(1555.5, 663.25)
+position = Vector2(456.5, 663.25)
 shape = SubResource("RectangleShape2D_ol74c")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1727575587]
 offset_left = -1.0
 offset_top = 529.0
-offset_right = 3106.0
+offset_right = 910.0
 offset_bottom = 802.0
 
 [node name="StaticBody2D2" parent="." unique_id=160785346 instance=ExtResource("2_ol74c")]
-position = Vector2(690, 425)
+position = Vector2(648, 396)
 
 [node name="StaticBody2D3" parent="." unique_id=748597802 instance=ExtResource("2_ol74c")]
-position = Vector2(1560, 423)
+position = Vector2(417, 263)
 
 [node name="StaticBody2D4" parent="." unique_id=1019688572 instance=ExtResource("2_ol74c")]
-position = Vector2(2320, 417)
-
-[node name="enemy" parent="." unique_id=1446513223 instance=ExtResource("3_odxj3")]
-position = Vector2(1038, 499)
+position = Vector2(712, 137)
 
 [node name="player" parent="." unique_id=1532654129 instance=ExtResource("1_ltvaw")]
 position = Vector2(474, 494)
+
+[node name="StaticBody2D5" parent="." unique_id=1406063639 instance=ExtResource("2_ol74c")]
+position = Vector2(1019, 44)
+
+[node name="StaticBody2D6" parent="." unique_id=1501552177 instance=ExtResource("2_ol74c")]
+position = Vector2(1370, 46)
+
+[node name="StaticBody2D7" parent="." unique_id=1111189696 instance=ExtResource("2_ol74c")]
+position = Vector2(1639, -93)
+
+[node name="StaticBody2D8" parent="." unique_id=737911807 instance=ExtResource("2_ol74c")]
+position = Vector2(1372, -195)
+
+[node name="StaticBody2D9" parent="." unique_id=842395774 instance=ExtResource("2_ol74c")]
+position = Vector2(1101, -262)
+
+[node name="StaticBody2D10" parent="." unique_id=1073862764 instance=ExtResource("2_ol74c")]
+position = Vector2(805, -257)
+
+[node name="StaticBody2D11" parent="." unique_id=196136266 instance=ExtResource("2_ol74c")]
+position = Vector2(533, -378)
+
+[node name="StaticBody2D12" parent="." unique_id=467686329 instance=ExtResource("2_ol74c")]
+position = Vector2(797, -488)
+
+[node name="enemy" parent="." unique_id=1446513223 instance=ExtResource("3_odxj3")]
+position = Vector2(775, 468)

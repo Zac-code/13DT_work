@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://w1wfk1i5ewye"]
 
-[ext_resource type="Script" uid="uid://bsyry4u4thyef" path="res://scripts(pain)/player.gd" id="1_i02a3"]
+[ext_resource type="Script" uid="uid://c1txc6b3gwrhm" path="res://scripts(pain)/playerscripy.gd" id="1_674bt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uxwo"]
 
 [node name="player" type="CharacterBody2D" unique_id=1532654129]
-script = ExtResource("1_i02a3")
+script = ExtResource("1_674bt")
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1346114614]
 scale = Vector2(3, 3)
