@@ -30,6 +30,9 @@ position = Vector2(417, 263)
 [node name="StaticBody2D4" parent="." unique_id=1019688572 instance=ExtResource("2_ol74c")]
 position = Vector2(712, 137)
 
+[node name="enemy" parent="." unique_id=1446513223 instance=ExtResource("3_odxj3")]
+position = Vector2(775, 468)
+
 [node name="player" parent="." unique_id=1532654129 instance=ExtResource("1_ltvaw")]
 position = Vector2(474, 494)
 
@@ -56,6 +59,3 @@ position = Vector2(533, -378)
 
 [node name="StaticBody2D12" parent="." unique_id=467686329 instance=ExtResource("2_ol74c")]
 position = Vector2(797, -488)
-
-[node name="enemy" parent="." unique_id=1446513223 instance=ExtResource("3_odxj3")]
-position = Vector2(775, 468)
