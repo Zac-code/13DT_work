@@ -7,11 +7,11 @@ size = Vector2(22.599998, 20.325)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1576498784]
 offset_left = -99.99999
-offset_top = -399.99997
+offset_top = -122.0
 offset_right = 100.00001
-offset_bottom = 400.00003
+offset_bottom = 106.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=625439317]
 position = Vector2(0, -6.499996)
-scale = Vector2(10, 40)
+scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_27iqt")

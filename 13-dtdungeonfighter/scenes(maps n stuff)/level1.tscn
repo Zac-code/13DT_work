@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w1wfk1i5ewye" path="res://assets/player.tscn" id="1_ltvaw"]
 [ext_resource type="PackedScene" uid="uid://dpgepu4jyvc1n" path="res://assets/platform.tscn" id="2_ol74c"]
 [ext_resource type="PackedScene" uid="uid://de5m4npxysw7h" path="res://assets/evilrobot.tscn" id="3_odxj3"]
+[ext_resource type="PackedScene" uid="uid://58uu7hxioyx3" path="res://assets/portal.tscn" id="4_7w4ah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol74c"]
 size = Vector2(917, 269.5)
@@ -59,3 +60,6 @@ position = Vector2(533, -378)
 
 [node name="StaticBody2D12" parent="." unique_id=467686329 instance=ExtResource("2_ol74c")]
 position = Vector2(797, -488)
+
+[node name="StaticBody2D13" parent="." unique_id=915711881 instance=ExtResource("4_7w4ah")]
+position = Vector2(994, -608)
