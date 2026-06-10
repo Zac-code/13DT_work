@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Movement variables
-var speed = 200.0
+var speed = 400.0
 var acceleration = 500.0
 var friction = 500.0
 

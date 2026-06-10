@@ -32,7 +32,7 @@ position = Vector2(417, 263)
 position = Vector2(712, 137)
 
 [node name="enemy" parent="." unique_id=1446513223 instance=ExtResource("3_odxj3")]
-position = Vector2(775, 468)
+position = Vector2(799, 485)
 
 [node name="player" parent="." unique_id=1532654129 instance=ExtResource("1_ltvaw")]
 position = Vector2(474, 494)

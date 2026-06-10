@@ -1,62 +1,45 @@
 extends CharacterBody2D
 
-# Movement variables
-var speed = 100.0
-var chase_speed = 200.0
-var acceleration = 300.0
-var friction = 300.0
 
-# Gravity
-var gravity = 800.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+const DETECTION_RANGE = 300.0
+const PATROL_SPEED = 100.0
 
-# Patrol behavior
+var player: CharacterBody2D = null
+var is_patrolling = false
 var patrol_direction = 1  # 1 for right, -1 for left
-var patrol_distance = 200.0
-var starting_position = Vector2.ZERO
-var is_patrolling = true
+var player_detected = false
 
-# Chase behavior
-var player = null
-var is_chasing = false
 
-func _ready():
-	starting_position = global_position
-
-func _physics_process(delta):
-	# Apply gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta
+func _ready() -> void:
+	# Find the player node
+	var player_nodes = get_tree().get_nodes_in_group("player")
+	if player_nodes.size() > 0:
+		player = player_nodes[0]
 	else:
-		velocity.y = 0
-	
-	# Determine movement based on state
-	if is_chasing and player:
-		# Chase the player
-		var direction = sign(player.global_position.x - global_position.x)
-		velocity.x = direction * chase_speed
-	elif is_patrolling:
-		# Patrol movement
-		velocity.x = patrol_direction * speed
-		
-		# Check if reached patrol boundary
-		if abs(global_position.x - starting_position.x) >= patrol_distance:
-			patrol_direction *= -1  # Change direction
-	
-	# Move the enemy
+		print("Warning: Player not found! Make sure player is in 'player' group or adjust the path.")
+
+
+func _physics_process(delta: float) -> void:
+	# Add gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Check if player is in detection range
+	if player:
+		var distance_to_player = global_position.distance_to(player.global_position)
+		player_detected = distance_to_player < DETECTION_RANGE
+	else:
+		player_detected = false
+
+	# Enemy movement: chase player if detected, otherwise stay still
+	if player_detected and player:
+		# Chase the player when detected
+		var player_direction = sign(player.global_position.x - global_position.x)
+		velocity.x = player_direction * SPEED
+	else:
+		# No movement when player is not detected
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
 	move_and_slide()
-
-# Called when player enters detection area (Area2D signal)
-func _on_detection_area_entered(area):
-	if area.name == "Player" or area.is_in_group("player"):
-		player = area.get_parent()  # Get the player CharacterBody2D
-		is_patrolling = false
-		is_chasing = true
-		print("Enemy detected player! Chasing...")
-
-# Called when player leaves detection area
-func _on_detection_area_exited(area):
-	if area.name == "Player" or area.is_in_group("player"):
-		player = null
-		is_patrolling = true
-		is_chasing = false
-		print("Enemy lost sight of player! Resuming patrol...")

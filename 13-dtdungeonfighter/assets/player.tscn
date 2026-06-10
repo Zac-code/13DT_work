@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uxwo"]
 
-[node name="player" type="CharacterBody2D" unique_id=1532654129]
+[node name="player" type="CharacterBody2D" unique_id=1532654129 groups=["player"]]
 script = ExtResource("1_674bt")
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1346114614]
