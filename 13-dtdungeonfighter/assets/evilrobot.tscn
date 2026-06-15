@@ -1,14 +1,8 @@
 [gd_scene format=3 uid="uid://de5m4npxysw7h"]
 
-[ext_resource type="Script" uid="uid://55yw1o31gypo" path="res://scripts(pain)/evilrobotscript.gd" id="1_svh2v"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnc05"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_svh2v"]
-radius = 137.23338
-
 [node name="enemy" type="CharacterBody2D" unique_id=1446513223]
-script = ExtResource("1_svh2v")
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=79526123]
 scale = Vector2(3, 3)
@@ -19,11 +13,3 @@ offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
 offset_bottom = 10.0
-
-[node name="detectionarea" type="Area2D" parent="." unique_id=831797372]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionarea" unique_id=1950753618]
-shape = SubResource("CircleShape2D_svh2v")
-
-[connection signal="area_entered" from="detectionarea" to="." method="_on_detection_area_entered"]
-[connection signal="area_exited" from="detectionarea" to="." method="_on_detection_area_exited"]
