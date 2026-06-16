@@ -37,3 +37,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+
+func _on_portal_touched(area: Area2D) -> void:
+	if area.has_meta("portal"):
+		get_tree().call_deferred("change_scene_to_file", area.next_level)
