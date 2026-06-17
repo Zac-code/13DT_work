@@ -61,5 +61,5 @@ position = Vector2(533, -378)
 [node name="StaticBody2D12" parent="." unique_id=467686329 instance=ExtResource("2_ol74c")]
 position = Vector2(797, -488)
 
-[node name="StaticBody2D13" parent="." unique_id=915711881 instance=ExtResource("4_7w4ah")]
-position = Vector2(994, -608)
+[node name="Area2D" parent="." unique_id=814274222 instance=ExtResource("4_7w4ah")]
+position = Vector2(977, -612)

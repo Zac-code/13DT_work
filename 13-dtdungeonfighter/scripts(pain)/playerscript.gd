@@ -28,6 +28,10 @@ func _physics_process(delta: float) -> void:
 				double_jump = false
 			velocity.y = JUMP_VELOCITY
 
+func _on_area_2d_4_area_entered(area: Area2D) -> void:
+	if area.has_meta("Portal"):
+		get_tree().call_deferred("change_scene_to_file", area.next_level)
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
