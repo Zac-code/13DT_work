@@ -1,49 +1,50 @@
 extends CharacterBody2D
 
+const SPEED := 300.0
+const JUMP_VELOCITY := -400.0
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-
-var score : int = 0
-var double_jump : bool = true
-@export var ui : Node
+var score: int = 0
+var double_jump: bool = true
+@export var ui: Node
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Apply gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
+	# Reset double jump after landing.
 	if is_on_floor() and not double_jump:
 		double_jump = true
 
-	# Handle jump.
+	# Handle jumping.
 	if Input.is_action_just_pressed("ui_accept"):
-		if is_on_floor() or (not is_on_floor() and double_jump):
+		if is_on_floor() or double_jump:
 			if not is_on_floor():
 				double_jump = false
 			velocity.y = JUMP_VELOCITY
 
-func _on_area_2d_4_area_entered(area: Area2D) -> void:
-	if area.has_meta("Portal"):
-		get_tree().call_deferred("change_scene_to_file", area.next_level)
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Handle horizontal movement every physics frame.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+
+	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
 	move_and_slide()
 
 
+func _on_area_2d_4_area_entered(area: Area2D) -> void:
+	if area.has_meta("Portal"):
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			area.next_level
+		)
+
 
 func _on_portal_touched(area: Area2D) -> void:
 	if area.has_meta("portal"):
-		get_tree().call_deferred("change_scene_to_file", area.next_level)
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			area.next_level
+		)

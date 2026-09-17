@@ -4,6 +4,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uxwo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_674bt"]
+size = Vector2(60, 59)
+
 [node name="player" type="CharacterBody2D" unique_id=1532654129]
 script = ExtResource("1_674bt")
 
@@ -21,3 +24,9 @@ offset_bottom = 9.666666
 position = Vector2(526, -118)
 zoom = Vector2(0.5, 1)
 position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=180274124]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705666524]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_674bt")
