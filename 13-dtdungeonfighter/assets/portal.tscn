@@ -6,6 +6,8 @@
 size = Vector2(59.5, 172)
 
 [node name="portal" type="Area2D" unique_id=1018089844]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_vqwsc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566229754]
@@ -17,3 +19,5 @@ offset_left = -19.0
 offset_top = -87.0
 offset_right = 23.0
 offset_bottom = 87.0
+
+[connection signal="body_entered" from="." to="." method="_on_portal_entered"]
