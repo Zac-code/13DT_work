@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://58uu7hxioyx3"]
 
-[ext_resource type="Script" uid="uid://b61edxcvj3ck6" path="res://scripts(pain)/portal.gd" id="1_vqwsc"]
+[ext_resource type="Script" uid="uid://dmq746c0ppdlc" path="res://scripts(pain)/portal.gd" id="1_vqwsc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27iqt"]
 size = Vector2(59.5, 172)
@@ -19,5 +19,3 @@ offset_left = -19.0
 offset_top = -87.0
 offset_right = 23.0
 offset_bottom = 87.0
-
-[connection signal="body_entered" from="." to="." method="_on_portal_entered"]

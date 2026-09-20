@@ -3,7 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dpgepu4jyvc1n" path="res://assets/platform.tscn" id="1_fbs83"]
 [ext_resource type="PackedScene" uid="uid://w1wfk1i5ewye" path="res://assets/player.tscn" id="1_fnb5m"]
 
-[node name="Node2D" type="Node2D" unique_id=1045501011]
+[sub_resource type="GDScript" id="GDScript_fbs83"]
+script/source = "extends Node
+
+@export var level_number = 1"
+
+[node name="level2" type="Node2D" unique_id=1045501011]
+script = SubResource("GDScript_fbs83")
 
 [node name="StaticBody2D" parent="." unique_id=160785346 instance=ExtResource("1_fbs83")]
 position = Vector2(193, 323)
