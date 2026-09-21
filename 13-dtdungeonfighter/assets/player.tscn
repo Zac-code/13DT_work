@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uxwo"]
 
-[node name="player" type="CharacterBody2D" unique_id=1532654129 groups=["Player"]]
+[node name="player" type="CharacterBody2D" unique_id=1532654129 groups=["player"]]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_674bt")

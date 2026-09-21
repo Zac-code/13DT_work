@@ -2,10 +2,14 @@ extends CharacterBody2D
 
 const SPEED := 300.0
 const JUMP_VELOCITY := -400.0
+const MAX_HEALTH := 3
 
 var score: int = 0
 var double_jump: bool = true
+var health := 3
+
 @export var ui: Node
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -28,3 +32,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
 	move_and_slide()
+
+
+func hit() -> void:
+	health -= 1
+	
+	if health <= 0:
+		get_tree().call_deferred("reload_current_scene")
