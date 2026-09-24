@@ -75,7 +75,7 @@ position = Vector2(697, 294)
 position = Vector2(145, 74)
 
 [node name="PauseMenu" parent="." unique_id=368586144 instance=ExtResource("7_et6da")]
-offset_left = -595.0
-offset_top = -460.0
-offset_right = -595.0
-offset_bottom = -460.0
+offset_left = 345.0
+offset_top = -944.0
+offset_right = 345.0
+offset_bottom = -944.0
