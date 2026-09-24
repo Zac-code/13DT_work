@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bviq2aq24wu1t"]
+
+[node name="PauseMenu" type="Control" unique_id=368586144]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=842704602]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 652.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1610543553]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1923334519]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=190177933]
+layout_mode = 2
+text = "Quit"

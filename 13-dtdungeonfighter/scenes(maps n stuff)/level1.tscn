@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://rsdhai00ktek"]
 
 [ext_resource type="PackedScene" uid="uid://dpgepu4jyvc1n" path="res://assets/platform.tscn" id="1_7w4ah"]
+[ext_resource type="Script" uid="uid://b632w7hg8sd5x" path="res://scripts(pain)/level_1.gd" id="1_750so"]
 [ext_resource type="PackedScene" uid="uid://58uu7hxioyx3" path="res://assets/portal.tscn" id="2_ky23v"]
 [ext_resource type="PackedScene" uid="uid://b21nos5yhuwux" path="res://scenes(maps n stuff)/level2.tscn" id="3_750so"]
 [ext_resource type="PackedScene" uid="uid://w1wfk1i5ewye" path="res://assets/player.tscn" id="4_et6da"]
 [ext_resource type="PackedScene" uid="uid://bb3h545oinx01" path="res://assets/spike.tscn" id="5_ky23v"]
+[ext_resource type="PackedScene" uid="uid://bviq2aq24wu1t" path="res://assets/pause.tscn" id="7_et6da"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hq0w"]
 size = Vector2(592, 96)
 
 [node name="level1" type="Node2D" unique_id=436667332]
+script = ExtResource("1_750so")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1838252893]
 position = Vector2(16, 499)
@@ -70,3 +73,9 @@ position = Vector2(697, 294)
 
 [node name="spike3" parent="." unique_id=2122782282 instance=ExtResource("5_ky23v")]
 position = Vector2(145, 74)
+
+[node name="PauseMenu" parent="." unique_id=368586144 instance=ExtResource("7_et6da")]
+offset_left = -595.0
+offset_top = -460.0
+offset_right = -595.0
+offset_bottom = -460.0
