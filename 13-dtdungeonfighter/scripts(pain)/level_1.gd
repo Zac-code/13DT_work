@@ -3,10 +3,12 @@ extends Node2D
 @onready var pause_menu = $PauseMenu
 var paused = false
 
+# Checks for the pause input and toggles the menu each frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 
+# Shows or hides the pause menu and freezes or resumes the game world.
 func toggle_pause() -> void:
 	if paused:
 		pause_menu.hide()

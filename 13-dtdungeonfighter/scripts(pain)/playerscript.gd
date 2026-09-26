@@ -11,7 +11,7 @@ var health := 3
 
 @export var ui: Label
 
-
+# Handles movement, jumping, and updating the jump counter each frame.
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+# Lowers health and reloads the current level if the player dies.
 func hit() -> void:
 	health -= 1
 
