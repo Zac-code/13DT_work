@@ -5,11 +5,12 @@ const JUMP_VELOCITY := -400.0
 const MAX_HEALTH := 3
 
 
-var score: int = 0
-var double_jump: bool = true
-var health := 3
+# Player stats and UI reference
+var score: int = 0    
+var double_jump: bool = true 
+var health := 3    
 
-@export var ui: Label
+@export var ui: Label   
 
 # Handles movement, jumping, and updating the jump counter each frame.
 func _physics_process(delta: float) -> void:
@@ -19,17 +20,19 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and not double_jump:
 		double_jump = true
 
+# allows jumping from the ground or as a double jump, and adds one to the score
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor() or double_jump:
 			score += 1
+			
+# updates the score/UI
+		if ui is Label:
+			ui.text = "Jumps: " + str(score)
 
-			if ui is Label:
-				ui.text = "Jumps: " + str(score)
+		if not is_on_floor():
+			double_jump = false
 
-			if not is_on_floor():
-				double_jump = false
-
-			velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 
